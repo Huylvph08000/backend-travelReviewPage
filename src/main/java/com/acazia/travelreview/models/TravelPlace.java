@@ -20,23 +20,12 @@ public class TravelPlace {
 
     @Size(max = 500)
     private String description;
-
+    private String country;
+    private String province;
+    private String adress;
     private int liked;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "position_id", referencedColumnName = "id")
-    @JsonIgnoreProperties("travelPlace")
-    private Position position;
-
     public TravelPlace() {
-    }
-
-    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, int liked, Position position) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.liked = liked;
-        this.position = position;
     }
 
     public Long getId() {
@@ -63,6 +52,30 @@ public class TravelPlace {
         this.description = description;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
     public int getLiked() {
         return liked;
     }
@@ -70,12 +83,59 @@ public class TravelPlace {
     public void setLiked(int liked) {
         this.liked = liked;
     }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
+    //    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "position_id", referencedColumnName = "id")
+//    @JsonIgnoreProperties("travelPlace")
+//    private Position position;
+//
+//    public TravelPlace() {
+//    }
+//
+//    public TravelPlace(Long id, @NotBlank @Size(max = 100) String name, @Size(max = 500) String description, int liked, Position position) {
+//        this.id = id;
+//        this.name = name;
+//        this.description = description;
+//        this.liked = liked;
+//        this.position = position;
+//    }
+//
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+//    public int getLiked() {
+//        return liked;
+//    }
+//
+//    public void setLiked(int liked) {
+//        this.liked = liked;
+//    }
+//
+//    public Position getPosition() {
+//        return position;
+//    }
+//
+//    public void setPosition(Position position) {
+//        this.position = position;
+//    }
 }
